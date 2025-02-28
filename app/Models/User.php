@@ -22,7 +22,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'password_plain_text'
     ];
 
     /**
@@ -52,5 +51,11 @@ class User extends Authenticatable
     }
     public function ficherosCompartidos():HasMany{
         return $this->hasMany(FicheroCompartido::class);
+    }
+    public function carpetasCompartidas():HasMany{
+        return $this->hasMany(CarpetaCompartida::class);
+    }
+    public function carpetas():HasMany{
+        return $this->hasMany(Carpeta::class);
     }
 }

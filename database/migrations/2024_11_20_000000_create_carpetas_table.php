@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password_plain_text')->unique()->nullable();
+        Schema::create('carpetas', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('name');
+            $table->uuid('parent_id')->nullable();
+            $table->foreignUuid('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('password_plain_text');
-        });
+        Schema::dropIfExists('carpetas');
     }
 };

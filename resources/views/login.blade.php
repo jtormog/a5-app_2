@@ -10,5 +10,9 @@
         <input type="password" name="password" placeholder="Password" class="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500">
         
         <input type="submit" value="Login" class="bg-orange-500 text-white font-semibold py-2 rounded hover:bg-orange-700 cursor-pointer">
+        
+        <div class="text-center text-gray-300">
+            <a href="/" class="text-orange-500 hover:text-orange-700">Volver al inicio</a>
+        </div>
     </div>
 </form>
